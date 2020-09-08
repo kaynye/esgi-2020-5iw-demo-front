@@ -13,12 +13,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - run: mkdir .public
-    - run: cp -r * .public
-    - run: mv .public public
   deploy:
     - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./public
