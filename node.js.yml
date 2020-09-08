@@ -13,3 +13,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
+    - run: mkdir .public
+    - run: cp -r * .public
+    - run: mv .public public
