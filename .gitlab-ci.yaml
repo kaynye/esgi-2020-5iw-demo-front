@@ -1,0 +1,13 @@
+pages:
+  stage: deploy
+  image: node:14
+  script:
+    - yarn install
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
